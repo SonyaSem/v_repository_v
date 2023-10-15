@@ -1,6 +1,7 @@
-package org.data;
+package org.data.domain.department;
 
 public class Department {
+
     private String name;
 
     public Department(String name) {

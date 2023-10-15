@@ -1,5 +1,6 @@
 package org.data;
 
+import org.data.domain.department.Department;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

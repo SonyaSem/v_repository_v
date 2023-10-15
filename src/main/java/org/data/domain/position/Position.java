@@ -1,4 +1,4 @@
-package org.data;
+package org.data.domain.position;
 
 public class Position {
 

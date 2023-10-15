@@ -1,29 +1,20 @@
 package org.data;
 
+import org.data.domain.temporaryEmplyee.TemporaryEmployee;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class TemporaryEmployeeTest {
     @Test
     void test(){
 
-        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-
-        Date birthday = null;
-        Date endDate = null;
-        try {
-            birthday = format.parse("17.09.2023");
-            endDate = format.parse("30.09.2023");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
+        LocalDate birthday = LocalDate.of(2000, 12, 31);
+        LocalDate endDate = LocalDate.of(2020, 12, 31);
         TemporaryEmployee temporaryEmployee = new TemporaryEmployee(12341234, "Софья", "Алексеевна", "Семичева", birthday , "899911122", "г. Пенза, ул. Пушкина 10", "Школа 222, ПГУ", endDate);
         Assertions.assertEquals("Софья", temporaryEmployee.getFirstName());
         Assertions.assertEquals("Алексеевна", temporaryEmployee.getPatronymic());

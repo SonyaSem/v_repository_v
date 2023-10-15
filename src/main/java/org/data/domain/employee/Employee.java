@@ -1,5 +1,8 @@
-package org.data;
+package org.data.domain.employee;
 
+import org.data.exception.MyException;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 public abstract class Employee {
@@ -8,12 +11,12 @@ public abstract class Employee {
     private String firstName;
     private String patronymic;
     private String lastName;
-    private Date birthday;
+    private LocalDate birthday;
     private String phone;
     private String address;
     private String education;
 
-    public Employee(long personnelNumber, String firstName, String patronymic, String lastName, Date birthday, String phone, String address, String education) {
+    public Employee(long personnelNumber, String firstName, String patronymic, String lastName, LocalDate birthday, String phone, String address, String education) {
         this.personnelNumber = personnelNumber;
         this.firstName = firstName;
         this.patronymic = patronymic;
@@ -53,7 +56,7 @@ public abstract class Employee {
         this.lastName = lastName;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
@@ -81,5 +84,10 @@ public abstract class Employee {
     public void setEducation(String education) {
         this.education = education;
     }
+
+    public String fullName(){
+         return String.format("%s %s %s", firstName, patronymic, lastName);
+    }
+
 
 }

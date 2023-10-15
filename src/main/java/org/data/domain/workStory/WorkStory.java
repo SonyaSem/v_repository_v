@@ -1,20 +1,25 @@
-package org.data;
+package org.data.domain.workStory;
 
+import org.data.domain.department.Department;
+import org.data.domain.employee.Employee;
+import org.data.domain.position.Position;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 // трудовая история в организации
 public class WorkStory {
 
     private Employee employee;
-    private Date startDate;
-    private Date endDate = null;
+    private LocalDate startDate;
+    private LocalDate endDate = null;
 
     private Position position;
     private Department department;
 
     //private long contractNumber;
 
-    public WorkStory(Employee employee, Date startDate,   Position position, Department department) {
+    public WorkStory(Employee employee,  LocalDate startDate,   Position position, Department department) {
         this.employee = employee;
         this.startDate = startDate;
 
@@ -22,15 +27,15 @@ public class WorkStory {
         this.department = department;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate( LocalDate endDate) {
         this.endDate = endDate;
     }
 
-    public Date getStartDate() {
+    public  LocalDate getStartDate() {
         return startDate;
     }
 
-    public Date getEndDate() {
+    public  LocalDate getEndDate() {
         return endDate;
     }
 
